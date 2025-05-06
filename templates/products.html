@@ -1,0 +1,59 @@
+{% extends 'base_with_nav.html' %}
+
+{% block title %}EasyMeds - All Products{% endblock %}
+
+{% block main %}
+
+<!-- Page Heading -->
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">Browse All Medicines</h2>
+  
+  <!-- Filter and Sort -->
+  <div class="row g-3 mb-4">
+    <div class="col-md-6">
+      <select class="form-select">
+        <option selected disabled>Filter by Condition</option>
+        <option value="diabetes">Diabetes</option>
+        <option value="burn">Burns</option>
+        <option value="muscle">Muscle Pain</option>
+        <option value="cold">Cold Symptoms</option>
+        <option value="headache">Headache</option>
+        <option value="wound">Wound Care</option>
+        <option value="fever">Fever</option>
+        <option value="skin">Skin Irritation</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <select class="form-select">
+        <option selected disabled>Sort by Price</option>
+        <option value="low-to-high">Price: Low to High</option>
+        <option value="high-to-low">Price: High to Low</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Product Cards -->
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for product in products %}
+    <div class="col">
+      <a href="{{ url_for('product_detail', product_id=product.id) }}" class="text-decoration-none text-dark">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='img/' ~ product.image) }}" class="card-img-top" alt="{{ product.name }}">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-primary">{{ product.name }}</h5>
+            <p class="card-text">
+              <strong>Dosage:</strong> {{ product.dosage }}<br>
+              <strong>Price:</strong> {{ product.price }}<br>
+              <strong>Form:</strong> {{ product.form }}<br>
+              <strong>Description:</strong> {{ product.description }}<br>
+              <strong>Category:</strong> {{ product.category }}
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends 'base_checkout.html' %}
+
+{% block title %}EasyMeds - Delivery{% endblock %}
+
+{% block main %}
+    
+  <div class="container py-4 px-4"> <!-- Adds vertical (top/bottom) and horizontal (left/right) padding -->
+    <h2 class="mb-4">Checkout</h2> <!-- Adds bottom margin to separate from next element -->
+  
+    <!-- Order Summary -->
+    <div class="mb-4">
+      <h4>Order Summary</h4>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between">
+          <!-- Applies standard list item style; uses flex layout to space out content -->
+          <span>Metformin XR (750mg) x2</span>
+          <span>$29.60</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Voltaren Gel (150g) x1</span>
+          <span>$18.90</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between fw-bold">
+          <span>Total</span>
+          <span>$48.50</span>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Customer Information Form -->
+    <form>
+      <h4 class="mb-3">Customer Information</h4>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <!-- On medium and larger screens, this field takes up half the row -->
+          <label for="fullName" class="form-label fw-bold">Full Name:</label>
+          <!-- Bootstrap standard input field, large size -->
+          <input type="text" id="fullName" class="form-control form-control-lg">
+        </div>
+  
+        <div class="col-md-6">
+          <label for="email" class="form-label fw-bold">Email Address:</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+  
+        <div class="col-md-6">
+          <label for="phone" class="form-label fw-bold">Phone Number:</label>
+          <input type="tel" class="form-control" id="phone" placeholder="e.g. 0412 345 678">
+        </div>
+  
+        <div class="col-md-12">
+          <label for="deliveryOption" class="form-label fw-bold">Delivery Option:</label>
+          <select class="form-select" id="deliveryOption" required>
+            <option selected disabled>Choose a delivery method</option>
+            <option value="express">Express Delivery ($7.99)</option>
+            <option value="standard">Standard Delivery ($4.99)</option>
+            <option value="eco">Eco-friendly Delivery (Free)</option>
+            <option value="pickup">In-store Pickup (Free)</option>
+          </select>
+          <small class="text-muted">If you choose In-store Pickup, address is not required.</small>
+        </div>
+  
+        <div class="mt-4">
+          <h5 class="fw-bold">Optional Health Check Services</h5>
+          <p class="text-muted">Since you chose In-Store Pickup, you can request the following health checks at the pharmacy:</p>
+          
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="blood-pressure" id="bpCheck">
+            <label class="form-check-label" for="bpCheck">Blood Pressure Check</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="bmi" id="bmiCheck">
+            <label class="form-check-label" for="bmiCheck">BMI Measurement</label>
+          </div>
+        </div>
+        
+        <div class="col-md-12">
+          <label for="address" class="form-label fw-bold">Delivery Address:</label>
+          <input type="text" class="form-control" id="address" placeholder="Street address, suburb, postcode">
+        </div>
+  
+        <div class="col-md-12">
+          <label for="paymentMethod" class="form-label fw-bold">Payment Method:</label>
+          <select class="form-select" id="paymentMethod" required>
+            <option selected disabled>Select a payment method</option>
+            <option value="card">Credit/Debit Card</option>
+            <option value="cash">Cash on Pickup</option>
+            <option value="mobile">Mobile Payment</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="mt-4 text-end">
+        <button type="submit" class="btn btn-success">Submit Order</button>
+      </div>
+    </form>
+  </div>
+
+  {% endblock %}

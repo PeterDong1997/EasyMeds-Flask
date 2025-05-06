@@ -1,0 +1,49 @@
+{% extends 'base_with_nav.html' %}
+
+{% block title %}EasyMeds - Home{% endblock %}
+
+{% block main %}
+
+<!-- Featured Products Section -->
+<div class="container my-5">
+  <h2 class="mb-4 text-primary">Featured Medicines</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for product in products[:3] %}
+    <div class="col">
+      <a href="{{ url_for('product_detail', product_id=product.id) }}" class="text-decoration-none text-dark">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename='img/' ~ product.image) }}" class="card-img-top" alt="{{ product.name }}">
+          <div class="card-body">
+            <!-- Product Name & Dosage -->
+            <h5 class="card-title fw-bold text-primary">{{ product.name }} {{ product.dosage }}</h5>
+
+            <!-- Price Section -->
+            {% if product.discount %}
+              <p class="mb-1">
+                <span class="text-danger fw-bold">
+                  AUD {{
+                    (product.price | replace('AUD ', '') | float * (1 - product.discount / 100)) | round(2)
+                  }}
+                </span>
+                <span class="text-muted text-decoration-line-through ms-2">{{ product.price }}</span>
+                <span class="text-danger ms-1">({{ product.discount }}% OFF)</span>
+              </p>
+            {% else %}
+              <p class="fw-bold">Price: {{ product.price }}</p>
+            {% endif %}
+
+            <!-- Rating -->
+            {% if product.rating %}
+              <p class="mb-0">⭐ {{ product.rating }} 
+                <span class="text-muted">({{ product.num_reviews }} reviews)</span>
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

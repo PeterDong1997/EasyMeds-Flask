@@ -1,0 +1,53 @@
+{% extends 'base_with_nav.html' %}
+
+{% block title %}EasyMeds - Delivery{% endblock %}
+
+{% block main %}
+  
+  <!-- Delivery Request Table -->
+  <div class="table-responsive container mt-4">
+    <h2 class="mb-4">Your Delivery Request</h2>
+
+    <table class="table table-bordered align-middle">
+      <!-- Adds borders to all cells and aligns content vertically in the middle -->
+      <thead class="table-light">
+        <tr>
+          <th scope="col">Product Image</th>
+          <th scope="col">Product</th>
+          <th scope="col">Dosage</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Subtotal</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="{{ url_for('static', filename='img/Metformin.jpg') }}" alt="Metformin XR" style="width: 80px;"></td>
+          <td>Metformin XR</td>
+          <td>750mg</td>
+          <td>$14.80</td>
+          <td>2</td>
+          <td>$29.60</td>
+          <td><button class="btn btn-sm btn-outline-danger">Remove</button></td>
+        </tr>
+        <tr>
+          <td><img src="{{ url_for('static', filename='img/Voltaren.jpg') }}" alt="Voltaren Gel" style="width: 80px;"></td>
+          <td>Voltaren Gel</td>
+          <td>150g</td>
+          <td>$18.90</td>
+          <td>1</td>
+          <td>$18.90</td>
+          <td><button class="btn btn-sm btn-outline-danger">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Order total and checkout button aligned to the right -->
+    <div class="text-end">
+      <h4>Total: $48.50</h4>
+      <a href="checkout.html" class="btn btn-primary mt-3">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  {% endblock %}
