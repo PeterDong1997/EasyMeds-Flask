@@ -5,7 +5,7 @@ body {
     line-height: 1.6;
     background-color: #f8f9fa;
     color: #333;
-    padding-top: 70px; /* 避免 navbar 蓋住內容 */
+    padding-top: 70px; /* to avoid navbar cover info */
   }
   
   /* === Headings === */

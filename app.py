@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# 每個產品加上 id
+# Add ID to each product
 products = [
     {
         "id": 0,
