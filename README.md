@@ -94,13 +94,13 @@ Default URL: `http://127.0.0.1:5000`
 ---
 
 ## Future Modularization Plan:
-Currently, all logic is inside app.py for simplicity and easy onboarding.
+Currently, all logic is inside `app.py` for simplicity and easy onboarding.
 As we integrate database and authentication features, we can modularize the app for better structure and maintainability:
 
-- routes/ → Route handlers (e.g., main.py, auth.py)
-- models.py → Defines data structure (e.g., Product, User, using classes or ORM like SQLAlchemy)
-- forms.py → Form validation using Flask-WTF
-- utils.py or db.py → Helper functions or database interaction logic
+- `routes/` → Route handlers (e.g., `main.py`, `auth.py`)
+- `models.py` → Defines data structure (e.g., Product, User, using classes or ORM like SQLAlchemy)
+- `forms.py` → Form validation using Flask-WTF
+- `utils.py` or `db.py` → Helper functions or database interaction logic
 
 This phased approach ensures that:
 Beginners can quickly understand and contribute now
