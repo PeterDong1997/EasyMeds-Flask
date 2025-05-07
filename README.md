@@ -93,7 +93,7 @@ Default URL: `http://127.0.0.1:5000`
 
 ---
 
-Future Modularization Plan:
+## Future Modularization Plan:
 Currently, all logic is inside app.py for simplicity and easy onboarding.
 As we integrate database and authentication features, we can modularize the app for better structure and maintainability:
 
