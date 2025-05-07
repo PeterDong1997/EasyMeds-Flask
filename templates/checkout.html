@@ -3,8 +3,11 @@
 {% block title %}EasyMeds - Delivery{% endblock %}
 
 {% block main %}
-    
+
   <div class="container py-4 px-4"> <!-- Adds vertical (top/bottom) and horizontal (left/right) padding -->
+    <!-- Back Button -->
+    <a href="{{ url_for('index') }}" class="btn btn-secondary mb-3">← Back to Home</a>
+    
     <h2 class="mb-4">Checkout</h2> <!-- Adds bottom margin to separate from next element -->
   
     <!-- Order Summary -->

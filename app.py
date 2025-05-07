@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -103,7 +103,16 @@ products = [
 
 @app.route('/')
 def index():
-    return render_template('index.html', products=products)
+    query = request.args.get('query', '').lower()
+    if query:
+        filtered_products = [
+            product for product in products
+            if query in product['name'].lower() or query in product['dosage'].lower()
+        ]
+    else:
+        filtered_products = products
+
+    return render_template('index.html', products=filtered_products)
 
 @app.route('/products')
 def all_products():

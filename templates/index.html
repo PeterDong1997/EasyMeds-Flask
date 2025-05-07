@@ -4,6 +4,16 @@
 
 {% block main %}
 
+<!-- Search Bar Section -->
+<div class="container my-4">
+  <form method="GET" action="{{ url_for('index') }}">
+    <div class="input-group mb-4">
+      <input type="text" name="query" class="form-control" placeholder="Search medicines..." value="{{ request.args.get('query', '') }}">
+      <button class="btn btn-outline-primary" type="submit">Search</button>
+    </div>
+  </form>
+</div>
+
 <!-- Featured Products Section -->
 <div class="container my-5">
   <h2 class="mb-4 text-primary">Featured Medicines</h2>
