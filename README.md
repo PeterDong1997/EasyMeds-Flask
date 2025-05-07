@@ -67,6 +67,7 @@ Default URL: `http://127.0.0.1:5000`
 - [x] Filter by condition (dropdown - static, no JS)
 - [x] Sort by price (Low-to-High / High-to-Low - static only)
 - [ ] Optional: Add future category-based navigation (breadcrumb style)
+- [ ] Add the long description down below
 
 ### `product_details.html`
 - [x] Carousel for product images
