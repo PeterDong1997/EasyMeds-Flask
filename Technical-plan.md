@@ -3,6 +3,10 @@
 This guide walks you through cloning the project, creating your own branch, and pushing your changes using Visual Studio Code.
 
 ---
+## Video Tutorial
+
+[How to Clone a GitHub Repository into VS Code | Step-by-Step Guide](https://www.youtube.com/watch?v=DdRCU1DUYE8)
+---
 
 ## 1️ Open Visual Studio Code
 
