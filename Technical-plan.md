@@ -1,64 +1,71 @@
-How to Clone a GitHub Repository and Work on Your Own Branch in VS Code
+#  How to Clone a GitHub Repository and Work on Your Own Branch in VS Code
 
-1. Open Visual Studio Code
-You don’t need to manually create a folder yet.
+This guide walks you through cloning the project, creating your own branch, and pushing your changes using Visual Studio Code.
 
-2. Copy the GitHub repository URL
-Go to the repository page on GitHub
+---
 
-Click the green Code button
+## 1️ Open Visual Studio Code
 
-Copy the URL using HTTPS or SSH, e.g.:
+You don’t need to manually create a folder in advance.
 
+---
 
-https://github.com/PeterDong1997/EasyMeds-Flask.git
+## 2️ Copy the GitHub Repository URL
 
-3. lone the repository in VS Code
-Open the Command Palette:
-Ctrl + Shift + P (Windows) or Cmd + Shift + P (Mac)
+- Go to the GitHub repository page:  
+  [`https://github.com/PeterDong1997/EasyMeds-Flask.git`](https://github.com/PeterDong1997/EasyMeds-Flask.git)
+- Click the green **Code** button  
+- Copy the URL using **HTTPS** or **SSH**
 
-Type and select:
+---
+
+## 3️ Clone the Repository in VS Code
+
+- Open the Command Palette:  
+  `Ctrl + Shift + P` (Windows) or `Cmd + Shift + P` (Mac)
+- Type and select:
 
 Git: Clone
 
-Paste the repository URL
+- Paste the repository URL
+- Choose a local folder to save the project
+- Once cloning is complete, click **Open** when prompted
 
-Choose a local folder to save the project
-After cloning, click Open when prompted
+---
 
-4.  Create a new local branch
-After the repository is opened in VS Code:
+## 4️ Create a New Local Branch
 
-Open the Source Control panel (branch icon on the left)
-On the bottom left of VS Code (status bar), click the current branch name (e.g., main)
-Select Create new branch…
+Once inside the project folder:
 
-Name your branch, e.g.:
-
-css
-Copy
-Edit
+- Open the **Source Control** panel (left sidebar, branch icon)
+- At the bottom-left of VS Code, click the current branch name (e.g., `main`)
+- Select **Create new branch…**
+- Name your new branch, e.g.:
 peter-edit-header
-VS Code will automatically switch to your new branch
 
-You are now editing on your own branch — changes here won’t affect main until you create a pull request.
+- VS Code will automatically switch to your new branch
 
-5. Edit, commit, and push your branch
-Make your changes in VS Code
+✅ You are now working on your **own branch**. Your changes won’t affect `main` until you submit a pull request.
 
-Go to Source Control
+---
 
-Write a commit message and click the ✓ (check mark) icon
+## 5️ Edit, Commit, and Push Your Branch
 
-Then click the … menu > Push
+- Make your changes in VS Code
+- Open the **Source Control** panel
+- Enter a commit message (e.g., `Update homepage layout`)
+- Click the ✓ (check mark) icon to commit
+- Click the `…` menu > **Push**
 
-* The first time you push a new branch, Git will ask if you want to publish it — select Yes or Publish branch.
+💡 If this is the first time pushing this branch, click **Publish Branch** when prompted.
 
-6. (Optional) Open a Pull Request on GitHub
-Go to the repository page on GitHub
+---
 
-You will see a prompt:
+## 6️ (Optional) Create a Pull Request on GitHub
 
-“Compare & pull request” for your new branch
+- Go to the GitHub repository page
+- You’ll see a prompt:
 
-Click it to open a pull request and propose your changes to be merged into main
+> “Compare & pull request” for your new branch
+
+- Click it to propose merging your branch into `main`
